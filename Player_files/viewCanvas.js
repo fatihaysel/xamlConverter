@@ -39,17 +39,41 @@ function getNewPage() {
 
     _swfPath = _swfArray[_selectedIndex];
 
-    getImage = $.get(api_get_size + _swfPath, function (data) {
+    // $jsonobj = '{"0":230,"1":140,"2":13,"3":"width=\"230\" height=\"140\"","mime":"application\/x-shockwave-flash"}';
 
-    }).done(function (data) {
+    // data = var_dump(json_decode($jsonobj));
 
-        data = JSON.parse(data);
-        _questionW = data[0];
-        _questionH = data[1];
+    //data = JSON.parse('{"0":230,"1":140,"2":13,"3":"width=\"230\" height=\"140\"","mime":"application\/x-shockwave-flash"}');
+
+    //var url ='https://www.wallpapers13.com/wp-content/uploads/2020/09/Sunset-Airplane-Takeoff-Free-Images-for-Wallpapers-Hd-915x515.jpg';
+
+
+
+    // var url ='https://www.wallpapers13.com/wp-content/uploads/2020/09/Sunset-Airplane-Takeoff-Free-Images-for-Wallpapers-Hd-915x515.jpg';
+
+ 
+    //     var img = new Image();  
+    //     img.src = url;
+
+    //     _questionW = img.width;
+    //     _questionH = img.height;
+
+        _questionW = 230;
+        _questionH = 140;
 
         loadBG();
 
-    });
+   //getImage = $.get(api_get_size + _swfPath, function (data) {
+
+    // }).done(function (data) {
+
+    //     data = JSON.parse(data);
+    //     _questionW = data[0];
+    //     _questionH = data[1];
+
+    //     loadBG();
+
+    // });
 
 }
 
@@ -633,7 +657,10 @@ function afterArrow(_object) {
     _shape.stroke();
     _shape.fillStyle = _object.color;
     _shape.fill();
+
 }
+
+
 
 
 /*

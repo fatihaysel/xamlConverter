@@ -65,14 +65,89 @@
 		</style>
 	</head>
 	<body style="background-color:#cccccc">
-	
+
+		<video id="video" width="800"autoplay muted loop></video>
+	<!--	
+		<canvas id="canvas" width="800" height="450" ></canvas>
+	-->
 		<div id="player" data-sound="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" data-pdf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.pdf" data-swf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.swf" data-xaml="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.xaml" data-cry="10|20" style="margin: 17.461px 0px 0px; padding: 0px; background-color: rgb(0, 0, 0); width: 1165px; height: 617.086px;"> 
 			<canvas id="canvas" style="margin: -10px 0px 0px; display: block; padding: 0px; background-repeat: no-repeat; background-color: rgb(255, 255, 255); background-size: 560.656px 341.269px; background-image: url(&quot;https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg&quot;); background-position: 43.6875px 43.6875px;" width="1165" height="617.0859374999999"></canvas>
 			<audio id="sound" controls="" autoplay="" controlslist="nodownload" src="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" style="width: 1165px; height: 25px; margin: 0px auto; display: block; position: relative; top: -17px;"></audio>
 		</div>
 	
 		<script type="text/javascript">
-			
+
+var canvas = document.querySelector("canvas");
+var ctx = canvas.getContext("2d");
+
+var video = document.querySelector("video");
+
+var colors = ["red", "blue", "yellow", "orange", "black", "white", "green"];
+function draw (){
+	ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+draw();
+
+function computeFrame() {
+
+ctx_tmp.drawImage(video, 0, 0, video.videoWidth , video.videoHeight );
+let frame = ctx_tmp.getImageData(0, 0, video.videoWidth , video.videoHeight );
+
+ctx1.putImageData(frame, 0, 0);
+setTimeout(computeFrame, 0);
+}
+
+var videoStream = canvas.captureStream(30);
+var mediaRecorder = new MediaRecorder(videoStream);
+
+var chunks = [];
+mediaRecorder.ondataavailable = function(e) {
+  chunks.push(e.data);
+};
+
+mediaRecorder.onstop = function(e) {
+  var blob = new Blob(chunks, { 'type' : 'video/mp4' });
+  chunks = [];
+  var videoURL = URL.createObjectURL(blob);
+  video.src = videoURL;
+};
+mediaRecorder.ondataavailable = function(e) {
+  chunks.push(e.data);
+};
+
+mediaRecorder.start();
+setInterval(draw, 300);
+setTimeout(function (){ mediaRecorder.stop(); }, 5000);
+
+
+
+
+download = function (audioToSave, fName) {  
+    let audioBlob = new Blob(audioToSave, {
+      type: "mp4"
+    });
+    let url = URL.createObjectURL(audioBlob);
+    let a = document.createElement("a");
+    a.style = "display: none";
+    a.href = url;
+    document.body.appendChild(a);
+    a.download = fName;
+    a.click();
+
+    // release / remove
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+}
+
+mediaRecorder.onstop = async (event) => {
+        let fileName = 'audiofile_${Date.now().toString()}.mp4';
+        download(chunks, fileName); // <== This works at downloading the file to disk, but this is not a stream. Use to prove that audio is being recorded and that it can be saved.
+        //save(chunks, fileName);     // <== Trying to save using a stream 
+        chunks = [];
+    }
+
+
 			var x = $(window).innerWidth();
 			var y = $(window).innerHeight();
 			$('#player').css('width',x);
@@ -107,15 +182,18 @@
 			var _xaml 		= _player.attr('data-xaml');
 			var _cryptKey	= _player.attr('data-cry');
             
-			var api_pdf2jpg		= 'pdf2jpg.php?action=pdf2jpg&url=';
-			var api_xaml2text	= 'xaml2text.php?action=get-xml&url='+_xaml;
-			var api_get_size	= 'get-size.php?action=get-size&url=';
+			var api_pdf2jpg		= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/pdf2jpg.php?action=pdf2jpg&url=';
+			var api_xaml2text	= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/xaml2text.php?action=get-xml&url='+_xaml;
+			var api_get_size	= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/get-size.php?action=get-size&url=';
 			
+ 			var newUrl = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/';
+
 			//sorunun boyunu öğrenme
 			var _questionW;
 			var _questionH;
 
-			
+			//$str2 = substr($api_xaml2text, 21);
+
 			//çözümün xaml getirme 
 			$.ajax({
 				type: "GET",
