@@ -114,25 +114,25 @@ function loadBG() {
 
     var _imageURL = api_pdf2jpg + _pdfArray[_selectedIndex] + '&x=' + image_x + '&y=' + image_y;
 
-    // var ctx = _canvas.getContext("2d");
-    // var img = new Image();
-    // function addImg(){
-    //     img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-    //     //ctx.drawImage(img, _infoPaddingX-10,_infoPaddingY,_x,_y);
-    //     const imageData = ctx.createImageData(100, 100);
-    //     for (let i = 0; i < imageData.data.length; i += 4) {
-    //         // Modify pixel data
-    //         imageData.data[i + 0] = 190;  // R value
-    //         imageData.data[i + 1] = 0;    // G value
-    //         imageData.data[i + 2] = 210;  // B value
-    //         imageData.data[i + 3] = 255;  // A value
-    //       }
-    //     ctx.putImageData(imageData,100,100);
+    var ctx = _canvas.getContext("2d");
+    var img = new Image();
+    function addImg(){
+        img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
+        ctx.drawImage(img, _infoPaddingX-10,_infoPaddingY,_x,_y);
+        // const imageData = ctx.createImageData(100, 100);
+        // for (let i = 0; i < imageData.data.length; i += 4) {
+        //     // Modify pixel data
+        //     imageData.data[i + 0] = 190;  // R value
+        //     imageData.data[i + 1] = 0;    // G value
+        //     imageData.data[i + 2] = 210;  // B value
+        //     imageData.data[i + 3] = 255;  // A value
+        //   }
+        // ctx.putImageData(imageData,100,100);
         
         
-    // }
+    }
 
-    // addImg();    
+    
 
     
 
@@ -149,13 +149,13 @@ function loadBG() {
                 "background-size": _x + "px" + " " + _y + "px"
             });
 
-            
+            addImg();
         }
     });
 
 
     _shape = _canvas.getContext("2d");
-    //addImg();
+    
 
     _shape.save();
     _shape.scale(_playerScale, _playerScale);

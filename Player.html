@@ -105,7 +105,7 @@ function addImg1(){
 
 
 
-    function addImg(){
+    function addImg2(){
 		var ctx = canvas.getContext("2d" );
         img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
 		ctx.drawImage(img, 50,50,500,500);
@@ -369,7 +369,7 @@ mediaRecorder.onstop = async (event) => {
 			function sound_playProgress(){
 				for(var _key in _mainArray)
 				{
-					addImg();
+					//addImg2();
 					if(!_mainArray[_key].status && _mainArray[_key].startTime <= _sound.currentTime)
 					{
 						_mainArray[_key].status = true;
