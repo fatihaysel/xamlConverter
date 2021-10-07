@@ -78,6 +78,8 @@ function getNewPage() {
 }
 
 
+
+
 function loadBG() {
 
 
@@ -112,6 +114,27 @@ function loadBG() {
 
     var _imageURL = api_pdf2jpg + _pdfArray[_selectedIndex] + '&x=' + image_x + '&y=' + image_y;
 
+    // var ctx = _canvas.getContext("2d");
+    // var img = new Image();
+    // function addImg(){
+    //     img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
+    //     //ctx.drawImage(img, _infoPaddingX-10,_infoPaddingY,_x,_y);
+    //     const imageData = ctx.createImageData(100, 100);
+    //     for (let i = 0; i < imageData.data.length; i += 4) {
+    //         // Modify pixel data
+    //         imageData.data[i + 0] = 190;  // R value
+    //         imageData.data[i + 1] = 0;    // G value
+    //         imageData.data[i + 2] = 210;  // B value
+    //         imageData.data[i + 3] = 255;  // A value
+    //       }
+    //     ctx.putImageData(imageData,100,100);
+        
+        
+    // }
+
+    // addImg();    
+
+    
 
     getBase64 = $.ajax({
         type: 'GET',
@@ -126,12 +149,14 @@ function loadBG() {
                 "background-size": _x + "px" + " " + _y + "px"
             });
 
-
+            
         }
     });
 
 
     _shape = _canvas.getContext("2d");
+    //addImg();
+
     _shape.save();
     _shape.scale(_playerScale, _playerScale);
     $('#player').css('height', _height);
@@ -140,6 +165,8 @@ function loadBG() {
 
 
 function canvas_addNewProcess(_object, _status, _addObject) {
+
+
     if (_timeline) {
         _timeline.clear();
         _timeline.kill();
@@ -194,6 +221,7 @@ function pauseTween() {
 
 function playTween() {
     if (_timeline) _timeline.play();
+    
 }
 
 
@@ -445,25 +473,25 @@ function addArrow(_object, _status) {
 }
 
 function completeLine(_object) {
-    _shape.closePath();
-    _shape.stroke();
-    _shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
-    removeAfter(_objectArray);
+    //_shape.closePath();
+    //_shape.stroke();
+    //_shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
+   // removeAfter(_objectArray);
 
 }
 
 function removeShape(_object) {
 
-    _shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
-    _objectArray = jQuery.grep(_objectArray, function (value) {
-        return value.id != _object.objectID;
-    });
-    removeAfter(_objectArray);
+    // _shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
+    // _objectArray = jQuery.grep(_objectArray, function (value) {
+    //     return value.id != _object.objectID;
+    // });
+    // removeAfter(_objectArray);
 }
 
 function clearAllShapes() {
-    _objectArray = [];
-    _shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
+    // _objectArray = [];
+    // _shape.clearRect(0, 0, _width / _playerScale, _height / _playerScale);
 }
 
 
@@ -659,6 +687,7 @@ function afterArrow(_object) {
     _shape.fill();
 
 }
+
 
 
 

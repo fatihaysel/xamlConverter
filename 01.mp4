@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<!-- saved from url=(0479)https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/?mp3=https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3&pdf=https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.pdf&swf=https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.swf&xaml=https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.xaml -->
-<html lang="tr-TR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!DOCTYPE HTML>
+<html lang="tr-TR">
+	<head>
+	
 		<title>Player</title>
-
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<link rel="stylesheet" href="./Player_files/bootstrap.min.css">
-		<link rel="stylesheet" href="./Player_files/player.css">
-		<script src="./Player_files/jquery.min.js"></script>
-		<script src="./Player_files/bootstrap.min.js"></script>
-		<script src="./Player_files/TweenMax.js"></script>
-		<script src="./Player_files/TweenLite.js"></script>
-		<script src="./Player_files/TimelineMax.js"></script>
-		<script src="./Player_files/TimelineLite.js"></script>
-		<script src="./Player_files/jquery.fullscreen-min.js"></script>
-		<script src="./Player_files/viewCanvas.js"></script>
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="player.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="greensocks/TweenMax.js"></script>
+		<script src="greensocks/TweenLite.js"></script>
+		<script src="greensocks/TimelineMax.js"></script>
+		<script src="greensocks/TimelineLite.js"></script>
+		<script src="jquery.fullscreen-min.js"></script>
+		<script src="viewCanvas.js"></script>
 		<style>
-
+			
 			html, body, div, span, applet, object, iframe,
 			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 			a, abbr, acronym, address, big, cite, code,
@@ -27,8 +28,8 @@
 			dl, dt, dd, ol, ul, li,
 			fieldset, form, label, legend,
 			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed,
-			figure, figcaption, footer, header, hgroup,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
 			menu, nav, output, ruby, section, summary,
 			time, mark, audio, video {
 				margin: 0;
@@ -39,7 +40,7 @@
 				vertical-align: baseline;
 			}
 			/* HTML5 display-role reset for older browsers */
-			article, aside, details, figcaption, figure,
+			article, aside, details, figcaption, figure, 
 			footer, header, hgroup, menu, nav, section {
 				display: block;
 			}
@@ -61,150 +62,47 @@
 				border-collapse: collapse;
 				border-spacing: 0;
 			}
-
+			
 		</style>
 	</head>
 	<body style="background-color:#cccccc">
-
-
-
-	<!--
-		<video id="video" width="800"autoplay muted loop></video>
-		<canvas id="canvas" width="800" height="450" ></canvas>
-		<canvas id="canvas" style="margin: -10px 0px 0px; display: block; padding: 0px; background-repeat: no-repeat; background-color: rgb(255, 255, 255); background-size: 560.656px 341.269px; background-image: url(&quot;https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg&quot;); background-position: 43.6875px 43.6875px;" width="1165" height="617.0859374999999"></canvas>
-	-->
-
-		<div id="player" data-sound="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" data-pdf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.pdf" data-swf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.swf" data-xaml="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.xaml" data-cry="10|20" style="margin: 17.461px 0px 0px; padding: 0px; background-color: rgb(0, 0, 0); width: 1165px; height: 617.086px;">
-			<canvas id="canvas" style="margin: -10px 0px 0px; display: block; padding: 0px; background-repeat: no-repeat; background-color: rgb(255, 255, 255); background-size: 560.656px 341.269px; background-image: url(&quot;https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg&quot;); background-position: 43.6875px 43.6875px;" width="1165" height="617.0859374999999"></canvas>
-			<audio id="sound" controls="" autoplay="" controlslist="nodownload" src="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" style="width: 1165px; height: 25px; margin: 0px auto; display: block; position: relative; top: -17px;"></audio>
+	
+		<div id="player" 
+			data-sound	=https://vektorelvideo.aciyayinlari.com.tr/uploads/assets/solution/cozum_53297_09_21_2021_15_18_19.mp3			data-pdf	=https://vektorelvideo.aciyayinlari.com.tr/uploads/assets/questions/6124/118134737a47278d4610b1bbc0003ab2.pdf			data-swf	=https://vektorelvideo.aciyayinlari.com.tr/uploads/assets/questions/6124/118134737a47278d4610b1bbc0003ab2.swf			data-xaml	=https://vektorelvideo.aciyayinlari.com.tr/uploads/assets/solution/cozum_53297_09_21_2021_15_18_19.xaml 
+			data-cry	="10|20" 
+			style		="margin:0px;padding:0px;background-color:#000"> 
+			<canvas id="canvas"	style="margin:0px auto;display:block;padding:0px;background-repeat:no-repeat;background-color:#ffffff; margin-top: -20px;"></canvas>
+			<audio id="sound" controls autoplay controlsList="nodownload"></audio>
 		</div>
-
+	
 		<script type="text/javascript">
-
-// var img = new Image();
-// img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-// var ctx = canvas.getContext("2d");
-// ctx.drawImage(img, 0, 0);
-
-// function draw() {
-// 	var canvas1 = document.getElementById("canvas");
-// var ctx = canvas1.getContext('2d');
-// var img = document.getElementById("scream");
-// ctx.drawImage(img, 10, 10);
-// }
-
-// draw();
-var canvas = document.getElementById("canvas");
-
-var img = new Image();
-function addImg1(){
-    var ctx = canvas.getContext("2d");
-    img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-    ctx.drawImage(img, 20, 20,200,250);
-}
-
-
-
-    function addImg(){
-		var ctx = canvas.getContext("2d" );
-        img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-		ctx.drawImage(img, 50,50,500,500);
-        // const imageData = ctx.createImageData(600, 600);
-        // for (let i = 0; i < imageData.data.length; i += 4) {
-        //     // Modify pixel data
-        //     imageData.data[i + 0] = 190;  // R value
-        //     imageData.data[i + 1] = 0;    // G value
-        //     imageData.data[i + 2] = 210;  // B value
-        //     imageData.data[i + 3] = 255;  // A value
-        //   }
-        // ctx.putImageData(imageData,20,20);
-        
-        
-    }
-  
-
-//addImg();
-
-var x = document.getElementById("sound").duration;
-
-var au = document.createElement('audio');
-au.src = "https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3";
-
-const getDuration = callback => {
-	au.addEventListener('loadedmetadata', () => {
-		callback(au.duration);
-	});
-};
-
-
-
-//alert(duration);
-
-var videoStream = canvas.captureStream(30);
-var mediaRecorder = new MediaRecorder(videoStream);
-
-
-var chunks = [];
-mediaRecorder.ondataavailable = function(e) {
-  chunks.push(e.data);
-};
-
-
-mediaRecorder.start();
-// mediaRecorder.stop
-getDuration(duration => {
-	setTimeout(function(){
-    mediaRecorder.stop();
-}, duration*200);
-});
-
-function download() {
-  var blob = new Blob(chunks, {
-    type: 'video/mp4'
-  });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  document.body.appendChild(a);
-  a.style = 'display: none';
-  a.href = url;
-  a.download = 'test.mp4';
-  a.click();
-  window.URL.revokeObjectURL(url);
-}
-
-mediaRecorder.onstop = async (event) => {
-	download();
-    }
-
-
-
+			
 			var x = $(window).innerWidth();
 			var y = $(window).innerHeight();
 			$('#player').css('width',x);
 			$('#player').css('height',y);
-
-
+		
+			
 			$(window).resize(function () {
-
+				
 				var x = $(window).innerWidth();
 				var y = $(window).innerHeight();
-
+				
 				$("#player").width(x);
 				$("#player").height(y);
-
+				
 				//loadBG();
 				getNewPage();
-				
 
 			});
-
+			
 			var _player 	= $("#player");
 			var _canvas 	= document.getElementById("canvas");
 			var _sound 		= document.getElementById("sound");
 			var _mainArray;
 			var _info;
 			var _selectedIndex;
-
+			
 			var _mp3 		= _player.attr('data-sound');
 			var _swf 		= _player.attr('data-swf');
 			var _swfArray	= _swf.split(',');
@@ -212,20 +110,17 @@ mediaRecorder.onstop = async (event) => {
 			var _pdfArray	= _pdf.split(',');
 			var _xaml 		= _player.attr('data-xaml');
 			var _cryptKey	= _player.attr('data-cry');
-
-			var api_pdf2jpg		= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/pdf2jpg.php?action=pdf2jpg&url=';
-			var api_xaml2text	= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/xaml2text.php?action=get-xml&url='+_xaml;
-			var api_get_size	= 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/get-size.php?action=get-size&url=';
-
- 			var newUrl = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/';
-
+            
+			var api_pdf2jpg		= 'pdf2jpg.php?action=pdf2jpg&url=';
+			var api_xaml2text	= 'xaml2text.php?action=get-xml&url='+_xaml;
+			var api_get_size	= 'get-size.php?action=get-size&url=';
+			
 			//sorunun boyunu öğrenme
 			var _questionW;
 			var _questionH;
 
-			//$str2 = substr($api_xaml2text, 21);
-
-			//çözümün xaml getirme
+			
+			//çözümün xaml getirme 
 			$.ajax({
 				type: "GET",
 				url: api_xaml2text,
@@ -236,22 +131,22 @@ mediaRecorder.onstop = async (event) => {
 			var _tween;
 			var _durum = false;
 			var _seekStatus = false;
-
+	
 			function parseXML(_xmlString){
-
+			
 				if(_xmlString == 'false'){
 					alert('XML hatası');
 					return;
 				}
-
+			
 				_xmlString = base64ToString(_xmlString, _cryptKey);
 				var _xml = jQuery.parseXML(_xmlString.split(",").join("."));
-
+			
 				_info = $(_xml).find('info').text().split("|");
 				var _tempArray;
-
+			
 				_mainArray=[];
-
+			
 				$(_xml).find('obj').each(function(){
 					var _obj={
 						startTime:parseFloat($(this).attr("t1")) / 1000,
@@ -259,26 +154,26 @@ mediaRecorder.onstop = async (event) => {
 						type : $(this).attr("act"),
 						id : $(this).attr("name"),
 						//color : $(this).attr("color"),
-						color : "#"+decimalToHexString(parseInt($(this).attr('color'))),
+						color : "#"+decimalToHexString(parseInt($(this).attr('color'))), 
 						highlight : $(this).attr("hl"),
 						size : parseFloat($(this).attr("thc")),
 						status : false
 					};
-					if(_obj.type == "line" || _obj.type == "eraser" || _obj.type == "arrow" || _obj.type == "triangle" || _obj.type == "rectangle"){
+					if(_obj.type == "line" || _obj.type == "eraser" || _obj.type == "arrow" || _obj.type == "triangle" || _obj.type == "rectangle"){					
 						_obj.points=[];
 						$(this).find("po").each(function(){
-							_tempArray=$(this).text().split("|");
-							_obj.points.push({ x:parseFloat(_tempArray[0]), y:parseFloat(_tempArray[1]) });
+							_tempArray=$(this).text().split("|");						
+							_obj.points.push({ x:parseFloat(_tempArray[0]), y:parseFloat(_tempArray[1]) });						
 						});
-
+						
 					}else if(_obj.type == "circle"){
-						_tempArray=$(this).find("rect").text().split("|");
+						_tempArray=$(this).find("rect").text().split("|");				
 						_obj.rectangle = {x:parseFloat(_tempArray[0]),y:parseFloat(_tempArray[1]),width:parseFloat(_tempArray[2]),height:parseFloat(_tempArray[3])};
 					}else if(_obj.type == "delete" || _obj.type == "add" || _obj.type == "scale" || _obj.type == "swf"){
 						_obj.objectID = $(this).find("id").text();
-					}
+					}				
 					_mainArray.push(_obj);
-
+					
 				});
 				_mainArray.sort(function(a,b){return a.startTime-b.startTime});
 				_selectedIndex = _info[5] == null ? 0:_info[5];
@@ -286,14 +181,14 @@ mediaRecorder.onstop = async (event) => {
 				getNewPage();
 				playSound();
 			}
-
+	
 			function playSound(){
 				/*var _soundH = $("audio#sound")[0].clientHeight;
 				_soundH = -1*_soundH;*/
-                $("#sound").css({"width":$('#player').width()+"px","height":"25px","margin":"0px auto","display":"block","position":"relative","top":"-17px"});
+                $("#sound").css({"width":$('#player').width()+"px","height":"25px","margin":"0px auto","display":"block","position":"relative"});
                 $("#sound").attr("src",_mp3);
-
-
+				
+				
 				$(_sound).on('playing', function(event){
 					if (_seekStatus) {
 						_sound.pause();
@@ -311,25 +206,24 @@ mediaRecorder.onstop = async (event) => {
 					_seekStatus=true;
 					stopAll();
 					clearAllShapes();
-
+					
 					var _time = _sound.currentTime;
-
+					
 					$.each( _mainArray, function( _key, _object ) {
-
+					
 						if(_object.startTime <= _time && _time <= _object.startTime + _object.duration)
-						{
+						{				
 							_time = _object.startTime-0.001;
 							return false;
 						}
-					});
-
-					$.each( _mainArray, function( _key, _object ) {
+					});			
+					
+					$.each( _mainArray, function( _key, _object ) {			
 						if(_object.startTime < _time)
 						{
-
-							
+						
 							_object.status=true;
-
+						
 							if(_object.type == "add")
 							{
 								var _tempObject = getObjectForAdd(_object.objectID);
@@ -339,24 +233,24 @@ mediaRecorder.onstop = async (event) => {
 							else
 							{
 								canvas_addNewProcess(_object,true,false);
-							}
+							}			
 						}
 						else
 						{
 							_object.status=false;
 						}
 					});
-
-
+					
+					
 					_seekStatus=false;
-
+					
 				});
-
+				
 			};
-
-
+		
+	
 			$(window).blur(stopAll);
-
+		
 			function stopAll(){
 				if(_tween != null){
 					_tween.onUpdate = null;
@@ -365,11 +259,10 @@ mediaRecorder.onstop = async (event) => {
 				_sound.pause();
 				pauseTween();
 			}
-
+	
 			function sound_playProgress(){
 				for(var _key in _mainArray)
 				{
-					addImg();
 					if(!_mainArray[_key].status && _mainArray[_key].startTime <= _sound.currentTime)
 					{
 						_mainArray[_key].status = true;
@@ -378,21 +271,21 @@ mediaRecorder.onstop = async (event) => {
 							var _object = getObjectForAdd(_mainArray[_key].objectID);
 							_object.status = true;
 							canvas_addNewProcess(_mainArray[_key], true, _object);
-
+							
 							//console.log(1, _mainArray[_key].points.length,_mainArray[_key].duration);
 						}
 						else{
 							canvas_addNewProcess(_mainArray[_key], _mainArray[_key].duration == 0?true:false);
-
+							
 							//console.log(2, _mainArray[_key].points, _mainArray[_key].duration);
-						}
+						}			
 					}
-				}
+				}	
 			}
-
-
+		
+		
 			function getObjectForAdd(_id){
-
+				
 				var _object;
 				for(var _key in _mainArray)
 				{
@@ -404,62 +297,62 @@ mediaRecorder.onstop = async (event) => {
 				}
 				return _object;
 			}
-
-
+		
+		
 			function decimalToHexString(number){
 				var sayi = 6 - number.toString(16).toUpperCase().length;
 				var sifir="";
 				var i;
 				if(sayi == 0){
-					return number.toString(16).toUpperCase();
+					return number.toString(16).toUpperCase(); 
 				}
 				for(i=0; i<sayi; i++){
 					sifir +='0';
 				}
 				return (sifir+number.toString(16)).toUpperCase();
-
+		
 			}
-
-
+		
+		
 			function base64ToString(_xmlString, _keyString){
-
-				var _strings = _xmlString.split("");
+				
+				var _strings = _xmlString.split("");		
 				var _keys = _keyString.split("|");
 				_strings.splice(_keys[0],1);
-				_strings.splice(_keys[1],1);
+				_strings.splice(_keys[1],1);			
 				return decode64(_strings.join(""));
 			}
-
-
+		
+	
 			var keyStr = "ABCDEFGHIJKLMNOP" +
 					"QRSTUVWXYZabcdef" +
 					"ghijklmnopqrstuv" +
 					"wxyz0123456789+/" +
 					"=";
-
+	
 			function encode64(input){
 				input = escape(input);
 				var output = "";
 				var chr1, chr2, chr3 = "";
 				var enc1, enc2, enc3, enc4 = "";
 				var i = 0;
-
+			
 				do {
 					chr1 = input.charCodeAt(i++);
 					chr2 = input.charCodeAt(i++);
 					chr3 = input.charCodeAt(i++);
-
+			
 					enc1 = chr1 >> 2;
 					enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
 					enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
 					enc4 = chr3 & 63;
-
+			
 					if (isNaN(chr2)) {
 					enc3 = enc4 = 64;
 					} else if (isNaN(chr3)) {
 					enc4 = 64;
 					}
-
+			
 					output = output +
 					keyStr.charAt(enc1) +
 					keyStr.charAt(enc2) +
@@ -468,16 +361,16 @@ mediaRecorder.onstop = async (event) => {
 					chr1 = chr2 = chr3 = "";
 					enc1 = enc2 = enc3 = enc4 = "";
 				} while (i < input.length);
-
+			
 				return output;
 			}
-
+	
 			function decode64(input) {
 				var output = "";
 				var chr1, chr2, chr3 = "";
 				var enc1, enc2, enc3, enc4 = "";
 				var i = 0;
-
+			
 				// remove all characters that are not A-Z, a-z, 0-9, +, /, or =
 				var base64test = /[^A-Za-z0-9\+\/\=]/g;
 				if (base64test.exec(input)) {
@@ -486,34 +379,34 @@ mediaRecorder.onstop = async (event) => {
 						"Expect errors in decoding.");
 				}
 				input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-
+			
 				do {
 					enc1 = keyStr.indexOf(input.charAt(i++));
 					enc2 = keyStr.indexOf(input.charAt(i++));
 					enc3 = keyStr.indexOf(input.charAt(i++));
 					enc4 = keyStr.indexOf(input.charAt(i++));
-
+			
 					chr1 = (enc1 << 2) | (enc2 >> 4);
 					chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
 					chr3 = ((enc3 & 3) << 6) | enc4;
-
+			
 					output = output + String.fromCharCode(chr1);
-
+			
 					if (enc3 != 64) {
 					output = output + String.fromCharCode(chr2);
 					}
 					if (enc4 != 64) {
 					output = output + String.fromCharCode(chr3);
 					}
-
+			
 					chr1 = chr2 = chr3 = "";
 					enc1 = enc2 = enc3 = enc4 = "";
-
+			
 				} while (i < input.length);
-
+			
 				return unescape(output);
 			}
 		</script>
-
-
-</body></html>
+		
+	</body>
+</html>
