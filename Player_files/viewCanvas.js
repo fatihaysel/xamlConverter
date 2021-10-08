@@ -40,24 +40,11 @@ function getNewPage() {
     _swfPath = _swfArray[_selectedIndex];
 
     // $jsonobj = '{"0":230,"1":140,"2":13,"3":"width=\"230\" height=\"140\"","mime":"application\/x-shockwave-flash"}';
-
-    // data = var_dump(json_decode($jsonobj));
-
-    //data = JSON.parse('{"0":230,"1":140,"2":13,"3":"width=\"230\" height=\"140\"","mime":"application\/x-shockwave-flash"}');
-
-    //var url ='https://www.wallpapers13.com/wp-content/uploads/2020/09/Sunset-Airplane-Takeoff-Free-Images-for-Wallpapers-Hd-915x515.jpg';
-
-
-
-    // var url ='https://www.wallpapers13.com/wp-content/uploads/2020/09/Sunset-Airplane-Takeoff-Free-Images-for-Wallpapers-Hd-915x515.jpg';
-
- 
-    //     var img = new Image();  
-    //     img.src = url;
-
-    //     _questionW = img.width;
-    //     _questionH = img.height;
-
+/*
+*
+* set width and height manually
+*
+*/
         _questionW = 230;
         _questionH = 140;
 
@@ -114,25 +101,36 @@ function loadBG() {
 
     var _imageURL = api_pdf2jpg + _pdfArray[_selectedIndex] + '&x=' + image_x + '&y=' + image_y;
 
+    /* 
+    * Add
+    * Image
+    * To
+    * Canvas
+    */
     var ctx = _canvas.getContext("2d");
     var img = new Image();
     function addImg(){
         img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-        ctx.drawImage(img, _infoPaddingX-10,_infoPaddingY,_x,_y);
-        // const imageData = ctx.createImageData(100, 100);
-        // for (let i = 0; i < imageData.data.length; i += 4) {
-        //     // Modify pixel data
-        //     imageData.data[i + 0] = 190;  // R value
-        //     imageData.data[i + 1] = 0;    // G value
-        //     imageData.data[i + 2] = 210;  // B value
-        //     imageData.data[i + 3] = 255;  // A value
-        //   }
-        // ctx.putImageData(imageData,100,100);
-        
-        
+        //ctx.drawImage(img, _infoPaddingX-10,_infoPaddingY,_x,_y);
+        const imageData = ctx.createImageData(800, 400);
+        for (let i = 0; i < imageData.data.length; i += 4) {
+            // Modify pixel data
+            imageData.data[i + 0] = 240;  // R value
+            imageData.data[i + 1] = 252;    // G value
+            imageData.data[i + 2] = 3;  // B value
+            imageData.data[i + 3] = 255;  // A value
+          }
+        ctx.putImageData(imageData,20,20);
     }
 
-    
+    addImg();
+
+        /* 
+    * Add
+    * Image
+    * To
+    * Canvas
+    */
 
     
 
@@ -149,7 +147,6 @@ function loadBG() {
                 "background-size": _x + "px" + " " + _y + "px"
             });
 
-            addImg();
         }
     });
 
@@ -472,6 +469,13 @@ function addArrow(_object, _status) {
 
 }
 
+/*
+* canvasi temizlyen kodlari kapattim
+*
+* 
+*/
+
+
 function completeLine(_object) {
     //_shape.closePath();
     //_shape.stroke();
@@ -531,6 +535,16 @@ function removeAfter(_objectArray) {
 
 
 }
+
+/*
+* canvasi temizlyen kodlari kapattim
+*
+* 
+*/
+
+
+
+
 
 function afterLine(_object) {
 

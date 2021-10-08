@@ -66,14 +66,6 @@
 	</head>
 	<body style="background-color:#cccccc">
 
-
-
-	<!--
-		<video id="video" width="800"autoplay muted loop></video>
-		<canvas id="canvas" width="800" height="450" ></canvas>
-		<canvas id="canvas" style="margin: -10px 0px 0px; display: block; padding: 0px; background-repeat: no-repeat; background-color: rgb(255, 255, 255); background-size: 560.656px 341.269px; background-image: url(&quot;https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg&quot;); background-position: 43.6875px 43.6875px;" width="1165" height="617.0859374999999"></canvas>
-	-->
-
 		<div id="player" data-sound="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" data-pdf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.pdf" data-swf="https://vektorelvideo.egitimicerik.com/uploads/assets/questions/19/5227182faf3e02b67d2c0afe654f21bc.swf" data-xaml="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.xaml" data-cry="10|20" style="margin: 17.461px 0px 0px; padding: 0px; background-color: rgb(0, 0, 0); width: 1165px; height: 617.086px;">
 			<canvas id="canvas" style="margin: -10px 0px 0px; display: block; padding: 0px; background-repeat: no-repeat; background-color: rgb(255, 255, 255); background-size: 560.656px 341.269px; background-image: url(&quot;https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg&quot;); background-position: 43.6875px 43.6875px;" width="1165" height="617.0859374999999"></canvas>
 			<audio id="sound" controls="" autoplay="" controlslist="nodownload" src="https://vektorelvideo.egitimicerik.com/uploads/assets/solution/cozum_36_02_10_2021_23_41_41.mp3" style="width: 1165px; height: 25px; margin: 0px auto; display: block; position: relative; top: -17px;"></audio>
@@ -81,49 +73,12 @@
 
 		<script type="text/javascript">
 
-// var img = new Image();
-// img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-// var ctx = canvas.getContext("2d");
-// ctx.drawImage(img, 0, 0);
-
-// function draw() {
-// 	var canvas1 = document.getElementById("canvas");
-// var ctx = canvas1.getContext('2d');
-// var img = document.getElementById("scream");
-// ctx.drawImage(img, 10, 10);
-// }
-
-// draw();
+/*
+* Record 
+* Canvas
+* Element
+*/
 var canvas = document.getElementById("canvas");
-
-var img = new Image();
-function addImg1(){
-    var ctx = canvas.getContext("2d");
-    img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-    ctx.drawImage(img, 20, 20,200,250);
-}
-
-
-
-    function addImg2(){
-		var ctx = canvas.getContext("2d" );
-        img.src = 'https://vektorelvideo.egitimicerik.com/soru_cozum/web_player/jpg2/2939789822c90ffab4aba6900ffb9af4.jpg';
-		ctx.drawImage(img, 50,50,500,500);
-        // const imageData = ctx.createImageData(600, 600);
-        // for (let i = 0; i < imageData.data.length; i += 4) {
-        //     // Modify pixel data
-        //     imageData.data[i + 0] = 190;  // R value
-        //     imageData.data[i + 1] = 0;    // G value
-        //     imageData.data[i + 2] = 210;  // B value
-        //     imageData.data[i + 3] = 255;  // A value
-        //   }
-        // ctx.putImageData(imageData,20,20);
-        
-        
-    }
-  
-
-//addImg();
 
 var x = document.getElementById("sound").duration;
 
@@ -138,8 +93,6 @@ const getDuration = callback => {
 
 
 
-//alert(duration);
-
 var videoStream = canvas.captureStream(30);
 var mediaRecorder = new MediaRecorder(videoStream);
 
@@ -151,7 +104,6 @@ mediaRecorder.ondataavailable = function(e) {
 
 
 mediaRecorder.start();
-// mediaRecorder.stop
 getDuration(duration => {
 	setTimeout(function(){
     mediaRecorder.stop();
@@ -175,6 +127,11 @@ function download() {
 mediaRecorder.onstop = async (event) => {
 	download();
     }
+/*
+* Record 
+* Canvas
+* Element
+*/
 
 
 
