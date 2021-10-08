@@ -345,7 +345,13 @@
               size: parseFloat($(this).attr("thc")),
               status: false,
             };
-            if (objTypeList.some(_obj.type)) {
+            if (
+              _obj.type == "line" ||
+              _obj.type == "eraser" ||
+              _obj.type == "arrow" ||
+              _obj.type == "triangle" ||
+              _obj.type == "rectangle"
+            ) {
               _obj.points = [];
               $(this)
                 .find("po")
@@ -364,7 +370,12 @@
                 width: parseFloat(_tempArray[2]),
                 height: parseFloat(_tempArray[3]),
               };
-            } else if (objTypeList2.some(_obj.type)) {
+            } else if (
+              _obj.type == "delete" ||
+              _obj.type == "add" ||
+              _obj.type == "scale" ||
+              _obj.type == "swf"
+            ) {
               _obj.objectID = $(this).find("id").text();
             }
             _mainArray.push(_obj);
